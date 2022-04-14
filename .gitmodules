@@ -1,0 +1,12 @@
+[submodule "deps/face_normals"]
+	path = deps/face_normals
+	url = https://github.com/boukhayma/face_normals
+[submodule "deps/face_parsing"]
+	path = deps/face_parsing
+	url = https://github.com/zllrunning/face-parsing.PyTorch.git
+[submodule "deps/InsightFace"]
+	path = deps/InsightFace
+	url = https://github.com/deepinsight/insightface.git
+[submodule "deps/RobustVideoMatting"]
+	path = deps/RobustVideoMatting
+	url = https://github.com/PeterL1n/RobustVideoMatting.git

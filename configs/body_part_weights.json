@@ -1,0 +1,61 @@
+{
+  "mlp": {
+    "lap": {
+     "left_eyeball": 0,
+      "right_eyeball": 0,
+      "forehead": 1,
+      "left_eye_region": 100,
+      "right_eye_region": 100,
+      "face": 1,
+      "left_ear": 500,
+      "right_ear": 500,
+      "scalp": 1,
+      "neck": 2,
+      "static_neck": 5,
+      "nose": 5e-1
+    },
+    "offset_reg": {
+      "left_eyeball": 0,
+      "right_eyeball": 0,
+      "left_eye_region": 1e-2,
+      "right_eye_region": 1e-2,
+      "face": 1e-4,
+      "forehead": 1,
+      "left_ear": 1,
+      "right_ear": 1,
+      "scalp": 0,
+      "neck": 0,
+      "nose": 1,
+      "static_neck": 0
+    },
+    "normal": {
+    }
+  },
+  "explicit": {
+    "lap": {
+      "left_eyeball": 100,
+      "right_eyeball": 100,
+      "forehead": 1,
+      "face": 100,
+      "left_ear": 100,
+      "right_ear": 100,
+      "scalp": 1,
+      "neck": 10,
+      "nose": 1e-1
+    },
+    "offset_reg": {
+      "left_eyeball": 1e-1,
+      "right_eyeball": 1e-1,
+      "eye_region": 1e-1,
+      "face": 1e-1,
+      "forehead": 1e-5,
+      "left_ear": 1e-1,
+      "right_ear": 1e-1,
+      "scalp": 1e-4,
+      "neck": 1e-4,
+      "nose": 1e-4
+    },
+    "normal": {
+    }
+  }
+}
