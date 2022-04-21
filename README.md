@@ -1,17 +1,16 @@
-# Neural Head Avatars from Monocular RGB Videos <br><sub>Official PyTorch implementation of the CVPR 2022 paper</sub>
+# Neural Head Avatars from Monocular RGB Videos <br><sub>Official PyTorch implementation of the CVPR 2022 paper ([Project Page](https://philgras.github.io/neural_head_avatars/neural_head_avatars.html))</sub>
+Philip-William Grassal\*, Malte Prinzler\*, Titus Leistner, Carsten Rother, Matthias Nießner, Justus Thies<br>
+<sub>\*equal contribution<sub><br>
+
 
 <br><br>
 
 ![Teaser image](./misc/teaser.png)
 <br><br>
 
-**Neural Head Avatars from Monocular RGB Videos**<br>
-Philip-William Grassal\*, Malte Prinzler\*, Titus Leistner, Carsten Rother, Matthias Nießner, Justus Thies<br>
-https://philgras.github.io/neural_head_avatars/neural_head_avatars.html<br>
-
 Abstract: We present Neural Head Avatars, a novel neural representation that explicitly models the surface geometry and appearance of an animatable human avatar that can be used for teleconferencing in AR/VR or other applications in the movie or games industry that rely on a digital human. Our representation can be learned from a monocular RGB portrait video that features a range of different expressions and views. Specifically, we propose a hybrid representation consisting of a morphable model for the coarse shape and expressions of the face, and two feed-forward networks, predicting vertex offsets of the underlying mesh as well as a view- and expression-dependent texture. We demonstrate that this representation is able to accurately extrapolate to unseen poses and view points, and generates natural expressions while providing sharp texture details. Compared to previous works on head avatars, our method provides a disentangled shape and appearance model of the complete human head (including hair) that is compatible with the standard graphics pipeline. Moreover, it quantitatively and qualitatively outperforms current state of the art in terms of reconstruction quality and novel-view synthesis. 
 <br><br>
-\*equal contribution
+
 
 <br>
 <br>
