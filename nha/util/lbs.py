@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+# code heavily inspired by https://github.com/HavenFeng/photometric_optimization, please consider 
+# citing their work if you find this code useful. The license for this code can be found under 
+# https://github.com/vchoutas/smplx/blob/master/LICENSE
+
 # Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. (MPG) is
 # holder of all proprietary rights on this computer program.
 # You can only use this computer program if you have closed
