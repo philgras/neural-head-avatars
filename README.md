@@ -106,8 +106,7 @@ two of our subjects from the paper [here](TODO: ADD LINK).
 
 To transfer the facial movement from one avatar to another, please follow the following steps.
 
-- [TODO] Rewrite reenactment script such that it doesn't require datasets but that tracking results suffice
-- Optimize one avatar for the target identity and one for the driving sequence
+- Optimize one avatar for the target identity and one for the driving sequence. Alternatively, you can also download the reconstructed avatars and head trackings from [TODO:here](TODO)
 - Adapt the ```configs/reenactment.ini``` config file. Make sure to change the following arguments according to your needs
     - ```target_model``` ... ckpt file of the optimized avatar (e.g. experiments/target_avatar.ckpt)
     - ```source_model``` ... ckpt file of the optimized avatar (e.g. experiments/source_avatar.ckpt)
