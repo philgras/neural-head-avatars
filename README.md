@@ -84,7 +84,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
 
    - Adapt the split config file at ```configs/split.json``` to specify which frames to use for training and which for validation 
  
-   - Adapt the config file at ```configs/avatar_optimization.ini``` according to your needs. Make sure to change the parameters:
+   - Adapt the config file at ```configs/optimize_avatar.ini``` according to your needs. Make sure to change the parameters:
  
          default_root_dir ... Path to directory to store the results in (e.g. experiments/optimized_avatars)
         
