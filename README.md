@@ -136,6 +136,7 @@ The code is available for non-commercial scientific research purposes under the 
 
 ```
 
+Parts of our code are heavily inspired by https://github.com/HavenFeng/photometric_optimization.git so please also consider citing their work as well as the underlying FLAME head model for which an up-to-date bibtex can be found [here](https://flame.is.tue.mpg.de/). 
 
 
 ## Acknowledgements 
