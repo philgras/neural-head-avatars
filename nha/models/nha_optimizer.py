@@ -216,7 +216,11 @@ class NHAOptimizer(pl.LightningModule):
         # loss definitions
         self._leaky_hinge = LeakyHingeLoss(0.0, 1.0, 0.3)
         self._masked_L1 = MaskedCriterion(torch.nn.L1Loss(reduction="none"))
-        self._perceptual_loss = NoSubmoduleWrapper(ResNetLOSS())  # don't store perc_loss weights as model weights
+
+        if Path("assets/InsightFace/backbone.pth").exists():
+            self._perceptual_loss = NoSubmoduleWrapper(ResNetLOSS())  # don't store perc_loss weights as model weights
+        else:
+            self._perceptual_loss = None
 
         # training stage
         self.fit_residuals = False
@@ -257,7 +261,11 @@ class NHAOptimizer(pl.LightningModule):
             shutil.copy(self.hparams["body_part_weights"], body_part_weights_path, follow_symlinks=True)
 
         # moves perceptual loss to own device
-        self._perceptual_loss.to(self.device)
+        try:
+            self._perceptual_loss.to(self.device)
+        except AttributeError:
+            raise AttributeError("You have to download the backbone weights for the perceptual loss. Please refer"
+                                 "to the 'Installation' section of the README")
 
         # hard setting lr
         flame_optim, offset_optim, tex_optim, joint_flame_optim, off_resid_optim, all_resid_optim = self.optimizers()

@@ -6,8 +6,9 @@ from torchvision import models
 from torchvision.transforms import Normalize
 from collections import namedtuple
 import sys
+from pathlib import Path
 
-sys.path.append("deps")
+sys.path.append(str((Path(__file__).parents[2]/"deps")))
 from InsightFace.recognition.arcface_torch.backbones import get_model
 
 
