@@ -43,8 +43,8 @@ This repository is accompanied by preprocessed training data, head tracking resu
 
 Novel pose and expression synthesis with a pretrained model
 
-- Download a pretrained model from [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303) and move the optimized avatar (*.ckpt) and head tracking (*.npz) files to ```./pretrained_models```
-- ```jupyter notebook jupyter_notebooks```
+- Download a pretrained model from [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303) and move the optimized avatar (.ckpt) and head tracking (.npz) files to ```./pretrained_models```
+- run ```jupyter notebook jupyter_notebooks```
 - Open the ```novel_pose_and_expression_synthesis.ipynb``` notebook
 - You can now play around with the expression and pose parameters for a pretrained avatar
 
