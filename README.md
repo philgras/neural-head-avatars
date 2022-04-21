@@ -32,13 +32,18 @@ by looking for the ms1mv3_arcface_r18_fp run. To ease the search, this is the On
 
 <br>
 
+## Downloadable Content
+This repository is accompanied by preprocessed training data, head tracking results and optimized avatars for two subjects. Please download the zipped files from [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303). The archive contains three folders: ```data``` contains preprocessed training files, ```nha``` contains the optimized head avatars, and ```tracking``` contains head tracking results. 
+            
+
+
 ## Quickstart
 
 <img align="right" src="./misc/novel_pose_and_expression_synthesis.png" width="200px">
 
 Novel pose and expression synthesis with a pretrained model
 
-- Download a pretrained model from [here](TODO:fill in the link) and extract it into ```./pretrained_models```
+- Download a pretrained model from [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303) and move the optimized avatar (*.ckpt) and head tracking (*.npz) files to ```./pretrained_models```
 - ```jupyter notebook jupyter_notebooks```
 - Open the ```novel_pose_and_expression_synthesis.ipynb``` notebook
 - You can now play around with the expression and pose parameters for a pretrained avatar
@@ -49,7 +54,7 @@ Novel pose and expression synthesis with a pretrained model
 ## Optimizing an Avatar Against a Monocular RGB Video
 Please follow these steps to optimize a new avatar from scratch against a monocular .mp4 video. 
 We provide preprocessed videos, FLAME head trackings and optimized avatar checkpoints for 
-two of our subjects from the paper [here](TODO: ADD LINK).
+two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303).
 
 1. Video Preprocessing
    - If you would like to use your own video, make sure you installed the required dependencies from above. 
@@ -61,7 +66,7 @@ two of our subjects from the paper [here](TODO: ADD LINK).
  
 2. Head Tracking
     - In order to track the FLAME head model over your input video, please follow the instructions
-      [here](TODO: add tracker link).
+      [here](https://github.com/philgras/video-head-tracker).
 
     - In brief: Adapt the config file ```configs/tracking.ini```. Make sure to change the following values according to your needs:
    
@@ -106,7 +111,7 @@ two of our subjects from the paper [here](TODO: ADD LINK).
 
 To transfer the facial movement from one avatar to another, please follow the following steps.
 
-- Optimize one avatar for the target identity and one for the driving sequence. Alternatively, you can also download the reconstructed avatars and head trackings from [TODO:here](TODO)
+- Optimize one avatar for the target identity and one for the driving sequence. Alternatively, you can also download the reconstructed avatars and head trackings from [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303).
 - Adapt the ```configs/reenactment.ini``` config file. Make sure to change the following arguments according to your needs
     - ```target_model``` ... ckpt file of the optimized avatar (e.g. experiments/target_avatar.ckpt)
     - ```source_model``` ... ckpt file of the optimized avatar (e.g. experiments/source_avatar.ckpt)
