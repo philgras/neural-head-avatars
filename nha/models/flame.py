@@ -1,6 +1,7 @@
 """
-Code heavily inspired by https://github.com/HavenFeng/photometric_optimization. Please consider citing their work
-if you find this code useful.
+Code heavily inspired by https://github.com/HavenFeng/photometric_optimization/blob/master/models/FLAME.py. 
+Please consider citing their work if you find this code useful. The code is subject to the license available via
+https://github.com/vchoutas/smplx/edit/master/LICENSE
 
 """
 import sys
