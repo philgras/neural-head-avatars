@@ -118,10 +118,7 @@ To transfer the facial movement from one avatar to another, please follow the fo
 ----------------------------------------------------------------------------------------------------------
 
 ## License
-
-Software Copyright License for **non-commercial scientific research purposes**.
-Please read carefully the [terms and conditions](./LICENSE) and any accompanying documentation before you download and/or use the Neural Head Avatar models, data and software. By downloading and/or using any components of this repository, you acknowledge that you have read these terms and conditions, understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not download and/or use this repository. Any infringement of the terms of this agreement will automatically terminate your rights under this [License](./LICENSE).
-
+The code is available for non-commercial scientific research purposes under the [MIT license](./LICENSE). Please note that the files [flame.py](./nha/models/flame.py) and [lbs.py](./nha/models/lbs.py) are heavily inspired by https://github.com/HavenFeng/photometric_optimization and are property of the Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. The download, use, and distribution of this code is subject to this [license](https://github.com/vchoutas/smplx/blob/master/LICENSE). 
 
 
 ## Citation 
