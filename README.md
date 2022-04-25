@@ -29,7 +29,7 @@ by looking for the ms1mv3_arcface_r18_fp run. To ease the search, this is the On
     - Add ```model.pth``` obtained from [here](https://github.com/boukhayma/face_normals/tree/5d6f21098b60dd5b43f82525383b2697df6e712b) to ```./assets/face_normals``` for face normal map prediction ([direct link](https://drive.google.com/file/d/1Qb7CZbM13Zpksa30ywjXEEHHDcVWHju_)).
     - Add ```model.pth``` obtained from [here](https://github.com/zllrunning/face-parsing.PyTorch/tree/d2e684cf1588b46145635e8fe7bcc29544e5537e) to ```./assets/face_parsing``` for facial segmentation ([direct link](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)).
     - Run `pip install -e deps/video-head-tracker` to install the FLAME tracker.  Download the flame 
-     head model and texture space from the from the official [website](https://flame.is.tue.mpg.de/) 
+     head model and texture space from the official [website](https://flame.is.tue.mpg.de/) 
      and add them as ```generic_model.pkl``` and ```FLAME_texture.npz``` under ```./assets/flame```. 
      Go to ```https://github.com/HavenFeng/photometric_optimization``` and copy the uv
      parametrization ```head_template_mesh.obj``` of FLAME found 
