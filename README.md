@@ -28,7 +28,14 @@ by looking for the ms1mv3_arcface_r18_fp run. To ease the search, this is the On
     - Add ```rvm_mobilenetv3.pth``` obtained from [here](https://github.com/PeterL1n/RobustVideoMatting/tree/81a10937c73f68eeddb863221c61fe6a60a1cca2) to ```./assets/rvm``` for background matting ([direct link](https://github.com/PeterL1n/RobustVideoMatting/releases/download/v1.0.0/rvm_mobilenetv3.pth)).
     - Add ```model.pth``` obtained from [here](https://github.com/boukhayma/face_normals/tree/5d6f21098b60dd5b43f82525383b2697df6e712b) to ```./assets/face_normals``` for face normal map prediction ([direct link](https://drive.google.com/file/d/1Qb7CZbM13Zpksa30ywjXEEHHDcVWHju_)).
     - Add ```model.pth``` obtained from [here](https://github.com/zllrunning/face-parsing.PyTorch/tree/d2e684cf1588b46145635e8fe7bcc29544e5537e) to ```./assets/face_parsing``` for facial segmentation ([direct link](https://drive.google.com/open?id=154JgKpzCPW82qINcVieuPH3fZ2e0P812)).
-
+    - Run `pip install -e deps/video-head-tracker` to install the FLAME tracker.  Download the flame 
+     head model and texture space from the from the official [website](https://flame.is.tue.mpg.de/) 
+     and add them as ```generic_model.pkl``` and ```FLAME_texture.npz``` under ```./assets/flame```. 
+     Go to ```https://github.com/HavenFeng/photometric_optimization``` and copy the uv
+     parametrization ```head_template_mesh.obj``` of FLAME found 
+     [there](https://github.com/HavenFeng/photometric_optimization/blob/master/data/head_template_mesh.obj)
+     to ```./assets/flame```, as well. (This is basically what the README of the flame tracking repo
+     tells you.)
 <br>
 
 ## Downloadable Content
@@ -57,17 +64,16 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
 
 1. Video Preprocessing
    - If you would like to use your own video, make sure you installed the required dependencies from above. 
-   - Run ```python python_scripts/video2dataset --video PATH_TO_VIDEO --out_path PATH_TO_OUTPUT_DIR```
+   - Run ```python python_scripts/video2dataset.py --video PATH_TO_VIDEO --out_path PATH_TO_OUTPUT_DIR```
  
        This script will automatically extract all necessary data including segmentations, normal maps and so on. While not beeing strictly necessary, we recommend using square videos captured at 25 fps at a resolution of 512x512 px. 
     <br>
  
  
 2. Head Tracking
-    - In order to track the FLAME head model over your input video, please follow the instructions
-      [here](https://github.com/philgras/video-head-tracker).
 
-    - In brief: Adapt the config file ```configs/tracking.ini```. Make sure to change the following values according to your needs:
+    - Adapt the config file `configs/tracking.ini` and make sure to change the following values according to your needs.
+      Note you can also set them on the command line by preceding each parameter name with `--`.
    
           data_path ... Path to the preprocessed dataset (e.g. data/own_dataset)
           
