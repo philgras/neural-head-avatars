@@ -58,16 +58,16 @@ Novel pose and expression synthesis with a pretrained model
 <br>
 
 ## Optimizing an Avatar Against a Monocular RGB Video
-Please follow these steps to optimize a new avatar from scratch against a monocular .mp4 video. 
+Please follow these steps to optimize a new avatar from scratch against a monocular .mp4 video. Make sure that only one subject is visble in every frame and that the head is turned in both directions up to profile views in order to provide enough information for the avatar optimization.
 We provide preprocessed videos, FLAME head trackings and optimized avatar checkpoints for 
 two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303).
 
 1. Video Preprocessing
    - If you would like to use your own video, make sure you installed the required dependencies from above. 
    - Run ```python python_scripts/video2dataset.py --video PATH_TO_VIDEO --out_path PATH_TO_OUTPUT_DIR```
- 
-       This script will automatically extract all necessary data including segmentations, normal maps and so on. While not beeing strictly necessary, we recommend using square videos captured at 25 fps at a resolution of 512x512 px. 
+    - Important: Make sure to crop the video tightly around the head as in the paper. Otherwise the generated ground truth is not as accurate and the optimization later on uses only a small part of each frame.
     <br>
+    This script will automatically extract all necessary data including segmentations, normal maps and so on. While not beeing strictly necessary, we recommend using square videos captured at 25 fps at a resolution of 512x512 px. 
  
  
 2. Head Tracking
@@ -75,6 +75,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
     - Adapt the config file `configs/tracking.ini` and make sure to change the following values according to your needs.
       Note you can also set them on the command line by preceding each parameter name with `--`.
    
+          tracking_resolution ... the resolution of each frame in the preprocessed video given in order height width
           data_path ... Path to the preprocessed dataset (e.g. data/own_dataset)
           
           output_path ... Path to output all results including tracked head model parameters, visualizations, logs, ... (e.g. data/own/dataset/tracking_results)
@@ -82,6 +83,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
           keyframes ... List of frame indices in the sequence dataset to initialize the FLAME texture and shape parameters against. Select frames that show the head from different angles and with approximately neutral expression. 
   
     - Run ```python deps/video-head-tracker/vht/optimize_tracking.py --config configs/tracking.ini```
+    - Note: If you point Tensorboard to `output_path`, you can follow the optimization.
     
     <br>
 
@@ -110,6 +112,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
    - After the optimization is finished, the trained model is stored in the directory specified via ```default_root_dir``` alongside with qualitative and quantitative evaluations.
 
    - Note the GPU requirements in the paper. If you have less resources available, try reducing the batch size, image resolution and capacities of the MLPs.
+    - Note: If you point Tensorboard to `default_root_dir`, you can follow the optimization.
 <br>
 
 ## Reenacting an Optimized Avatar
