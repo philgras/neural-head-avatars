@@ -64,7 +64,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
 
 1. Video Preprocessing
    - If you would like to use your own video, make sure you installed the required dependencies from above.
-   - Run ```python python_scripts/video2dataset.py --video PATH_TO_VIDEO --out_path PATH_TO_OUTPUT_DIR```
+   - Run ```python python_scripts/video_to_dataset.py --video PATH_TO_VIDEO --out_path PATH_TO_OUTPUT_DIR```
     - Important: Make sure to crop the video tightly around the head as in the paper. Otherwise the generated ground truth is not as accurate and the optimization later on uses only a small part of each frame.
     <br>
     This script will automatically extract all necessary data including segmentations, normal maps and so on. While not beeing strictly necessary, we recommend using square videos captured at 25 fps at a resolution of 512x512 px.
@@ -81,7 +81,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
 
           keyframes ... List of frame indices in the sequence dataset to initialize the FLAME texture and shape parameters against. Select frames that show the head from different angles and with approximately neutral expression.
 
-    - Run ```python deps/video-head-tracker/vht/optimize_tracking.py --config configs/tracking.ini```
+    - Run ```python deps/video-head-tracker/optimize_tracking.py --config configs/tracking.ini```
     - Note: If you point Tensorboard to `output_path`, you can follow the optimization.
 
     <br>
@@ -106,7 +106,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
 
       * The parameters ```w_semantic_hair, w_silh, w_lap``` change smoothly during training and are specified through lists of tuples with two entries. The first tuple entry specifies the weight value, the second specifies the epoch. Inbetween the so-defined fixpoints, the values are interpolated.
 
-   - Run ```python python_scripts/optimize_avatar.py --config configs/avatar_optimization.ini```
+   - Run ```python python_scripts/optimize_nha.py --config configs/avatar_optimization.ini```
 
    - After the optimization is finished, the trained model is stored in the directory specified via ```default_root_dir``` alongside with qualitative and quantitative evaluations.
 
