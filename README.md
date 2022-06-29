@@ -106,7 +106,7 @@ two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/
 
       * The parameters ```w_semantic_hair, w_silh, w_lap``` change smoothly during training and are specified through lists of tuples with two entries. The first tuple entry specifies the weight value, the second specifies the epoch. Inbetween the so-defined fixpoints, the values are interpolated.
 
-   - Run ```python python_scripts/optimize_avatar.py --config configs/avatar_optimization.ini```
+   - Run ```python python_scripts/optimize_nha.py --config configs/optimize_avatar.ini```
 
    - After the optimization is finished, the trained model is stored in the directory specified via ```default_root_dir``` alongside with qualitative and quantitative evaluations.
 
