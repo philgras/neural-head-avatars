@@ -53,11 +53,9 @@ class CPBD(Metric):
 
         scores = []
         x_np = x.detach().cpu().permute(0, 2, 3, 1).numpy()
-        if range == 'symmetric':
+        if scale == 'symmetric':
             x_np = x_np * .5 + .5
-        x_np = (x_np * 255).astype(np.uint8)
-        x_np[x_np < 0] = 0
-        x_np[x_np > 255] = 255
+
         for x_ in x_np:
             #  0.299 * r + 0.587 * g + 0.114 * b
             x_gray = 0.299 * x_[:, :, 0] + 0.587 * x_[:, :, 1] + 0.114 * x_[:, :, 2]
